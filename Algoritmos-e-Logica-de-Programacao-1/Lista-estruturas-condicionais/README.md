@@ -4,7 +4,7 @@
 
 O exercício consiste em criar um programa para calcular as raízes de uma equação do segundo grau, seguindo as regras da fórmula de Bhaskara.
 
-O programa deve receber três números reais, a, b e c, que são os coeficientes da equação $ ax^2+bx+c=0 $
+O programa deve receber três números reais, a, b e c, que são os coeficientes da equação $ax^2+bx+c=0$
 
 A saída do programa deve ser:
 
@@ -14,7 +14,7 @@ A saída do programa deve ser:
 
 * A mensagem "NEESG" (não é uma equação do segundo grau), se o coeficiente a for igual a 0.
 
-O cálculo das raízes depende do valor do delta, que é $ b^2−4ac $
+O cálculo das raízes depende do valor do delta, que é $b^2−4ac$
 
 ## 2. Acima da Média
 
