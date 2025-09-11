@@ -21,8 +21,12 @@ O cálculo das raízes depende do valor do delta, que é $ b^2−4ac $
 Este programa recebe três números de ponto flutuante e calcula quantos deles são maiores que a média aritmética.
 
 -   **Entrada**: Três números positivos com, no máximo, duas casas decimais, e com valor menor ou igual a 10.0.
+    - 2.0
+    9.0
+    10.0
 -   **Processamento**: O programa calcula a média dos três números e, em seguida, compara cada um deles com a média para contar quantos são superiores a ela.
 -   **Saída**: A quantidade total de números que estão acima da média.
+    - 2
 
 ## 3. Dia da Semana
 
@@ -54,8 +58,8 @@ A mercearia possui 4 produtos fixos:
 **Saída:** valor final a pagar no formato `R$ x.xx` (duas casas decimais).  
 
 Exemplo:  
-Entrada → `4` e `15`  
-Saída → `R$ 31.88`
+**Entrada**: `4` e `15`  
+**Saída**: `R$ 31.88`
 
 ## 5. 🔢 Pares, Ímpares, Positivos e Negativos
 
@@ -73,8 +77,145 @@ Este exercício consiste em ler um número inteiro e identificar se ele é **par
   - `NULO`  
 
 ### 📌 Exemplo
-**Entrada**
-11
+**Entrada**: 11
 
-**Saída**
-POSITIVO IMPAR
+**Saída**: POSITIVO IMPAR
+
+## 6. Decrescente 3
+
+Este programa lê três números inteiros e os imprime em ordem decrescente (do maior para o menor).  
+O desafio é tentar resolver utilizando apenas quatro comandos `if`.
+
+### 📥 Entrada:
+Três números inteiros.
+
+### ⚙️ Processamento:
+O programa compara os valores entre si e os organiza em ordem decrescente.
+
+### 📤 Saída:
+Os três números ordenados do maior para o menor.
+
+### 📌 Exemplo
+
+**Entrada**:
+2
+40
+101
+
+
+**Saída**:
+101
+40
+2
+
+---
+
+## 7. Produto mais barato
+
+Este programa pergunta o preço de três produtos e informa qual deles deve ser comprado, considerando sempre o mais barato.
+
+### 📥 Entrada:
+Três números reais correspondentes aos preços dos produtos.
+
+### ⚙️ Processamento:
+O programa compara os valores e identifica o menor preço entre os três.
+
+### 📤 Saída:
+Indicação de qual produto deve ser comprado (primeiro, segundo ou terceiro).
+
+### 📌 Exemplo
+**Entrada**:
+20.0
+15.87
+6.99
+
+**Saída**:
+Terceiro produto
+
+---
+
+## 8. Ano Bissexto
+
+Este programa recebe um ano e verifica se ele é bissexto ou não.
+
+### 📥 Entrada:
+Um número inteiro representando o ano.
+
+### ⚙️ Processamento:
+O programa aplica as regras de ano bissexto:
+- É múltiplo de 4;
+- Não pode ser múltiplo de 100, exceto se também for múltiplo de 400.
+
+### 📤 Saída:
+`BISSEXTO` ou `NAOBISSEXTO`.
+
+### 📌 Exemplo
+**Entrada**:
+2000
+
+**Saída**:
+BISSEXTO
+
+---
+
+## 9. Triângulo
+
+Este programa recebe três valores inteiros e verifica se eles podem formar um triângulo. Caso positivo, identifica se o triângulo é equilátero, isósceles ou escaleno.
+
+### 📥 Entrada:
+Três números inteiros representando os lados de um triângulo.
+
+### ⚙️ Processamento:
+- Verifica se a soma de dois lados é sempre maior que o terceiro (condição de existência de triângulo).
+- Classifica o triângulo em:
+  - **Equilátero**: três lados iguais.
+  - **Isósceles**: dois lados iguais.
+  - **Escaleno**: três lados diferentes.
+
+### 📤 Saída:
+O tipo do triângulo ou a indicação de que não forma um triângulo.
+
+### 📌 Exemplo
+**Entrada**:
+5
+5
+5
+
+**Saída**:
+Equilátero
+
+---
+
+## 10. Ambrósio e a gasolina
+
+Este programa calcula se Ambrósio pode realizar sua viagem de carro com a quantidade de dinheiro que possui, considerando o consumo do veículo e o preço da gasolina.
+
+### 📥 Entrada:
+Cinco inteiros:  
+- `D`: distância até o destino (km)  
+- `R`: quantidade de dinheiro disponível (reais)  
+- `L`: capacidade do tanque (litros)  
+- `P`: quantidade de postos de gasolina no caminho  
+- `G`: preço da gasolina (R$/litro)
+
+### ⚙️ Processamento:
+- Calcula a autonomia inicial do carro (10 km/L).  
+- Verifica se é possível chegar ao destino sem abastecer.  
+- Caso precise, considera o abastecimento nos postos, respeitando a capacidade do tanque e o valor disponível.  
+- Verifica se ainda sobra dinheiro após a viagem.
+
+### 📤 Saída:
+- `"Pode viajar. R$: X"` → se a viagem for possível e informa quanto restou de dinheiro.  
+- `"Nao pode viajar."` → se não houver condições de completar o percurso.
+
+### 📌 Exemplo
+**Entrada**:
+200
+15
+1
+4
+6
+
+**Saída**:
+Pode viajar.
+R$: 80
