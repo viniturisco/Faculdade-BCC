@@ -1,24 +1,21 @@
 #include <stdio.h>
 #include <math.h>
-
-int Num(int x){
-    if(x < 10) return 1;
-    return 1 + Num(x/10);
+int num(int n){
+    if(n < 10) return 1;
+    return 1 + num(n/10);
 }
-int soma(int x, int a){
-    if(x < 10) return pow(x%10, a);
-    return pow(x%10, a) + soma(x/10, a); 
+int soma(int n, int num){
+    if(n < 10) return pow(n%10, num);
+    return pow(n%10, num) + soma(n/10, num); 
 }
-
 int main(){
-    int x, a;
-    scanf("%d", &x);
-    a = Num(x);
-    if(soma(x, a) == x){
+    int n;
+    scanf("%d", &n);
+    if(soma(n, num(n)) == n){
         printf("Armstrong\n");
     }
     else{
-        printf("soma: %d\n", soma(x, a));
+        printf("soma: %d\n", soma(n, num(n)));
     }
     return 0;
 }

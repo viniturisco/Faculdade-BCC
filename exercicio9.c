@@ -1,36 +1,16 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-char* B(int n) {
-    char* binario = (char*)malloc(sizeof(char) * 65);
-    int i = 0;
-    int num = n;
-    while (num > 0) {
-        binario[i] = (num % 2) + '0';
-        num = num / 2;
-        i++;
-    }
-    binario[i] = '\0';
-    int j = 0;
-    int fim = i - 1; 
-    char temp;
-    while (j < fim) {
-        temp = binario[j];
-        binario[j] = binario[fim];
-        binario[fim] = temp;
-        j++;
-        fim--;
-    }
-    return binario;
+char* binario(int n, char* num[], int* i) {
+    if (n == 0) return num;
+    binario (n/2, num, i);
+    num[*i] = (n%2) + '0';
+    (*i)++;
+    num[i] = '\0';
+    return num;
 }
 int main() {
-    int n;
-    char* p; 
+    int n, i = 0;
+    char num[10];
     scanf("%d", &n);
-    p = B(n);
-    if (p != NULL) {
-        printf("%s\n", p);
-        free(p);
-    }
+    printf("%s\n", binario(n, num[10], &i));
     return 0;
 }
