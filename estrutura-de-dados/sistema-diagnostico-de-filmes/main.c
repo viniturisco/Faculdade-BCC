@@ -29,10 +29,10 @@ no* alocaRaiz(no *filme1, no *filme2) {
 void corrigirArvore(no* noAtual) {
     printf("Qual filme você pensou? ");
     char nomeFilme[255];
-    scanf(" %[^\n]s", nomeFilme);
+    scanf(" %[^\n]", nomeFilme);
     printf("Digite uma pergunta que diferencie %s de %s: ", nomeFilme, noAtual->nome);
     char novaPergunta[255];
-    scanf(" %[^\n]s", novaPergunta);
+    scanf(" %[^\n]", novaPergunta);
 
     //criando os novos nós
     no* novoFilme = alocaNo(nomeFilme);
