@@ -46,10 +46,10 @@ void corrigirArvore(no* noAtual) {
 }
 
 void perguntaFinal (no* noAtual) {
-    (printf("O filme que você pensou é %s?\n", noAtual->nome));
+    (printf("\nO filme que você pensou é %s?\n", noAtual->nome));
     printf("Responda com S ou N: ");
     char resposta;
-    scanf(" %c", &resposta);
+    scanf(" %c%*[^\n]", &resposta);
     if (resposta == 'S' || resposta == 's') {
         printf("Acertei de novo! Obrigado por jogar!\n");
         return;
@@ -63,7 +63,6 @@ void perguntaFinal (no* noAtual) {
 }
 
 void rodarSistema(no* noAtual) {
-
     //checagem se chegou no fim da árvore
     if (noAtual->esquerda == NULL && noAtual->direita == NULL) {
         //rodar uma função pra finalizar
@@ -71,10 +70,10 @@ void rodarSistema(no* noAtual) {
         perguntaFinal(noAtual);
         return;
     }
-    printf("%s\n", noAtual->nome);
+    printf("\n%s\n", noAtual->nome);
     printf("Responda com S ou N: ");
     char resposta;
-    scanf(" %c", &resposta);
+    scanf(" %c%*[^\n]", &resposta);
     if (resposta == 'S' || resposta == 's') {
         rodarSistema(noAtual->esquerda);
     } else if (resposta == 'N' || resposta == 'n') {
@@ -85,10 +84,14 @@ void rodarSistema(no* noAtual) {
     }
 }
 
-
-
-
-
+void liberaNo(no* noAtual) {
+    if (noAtual == NULL) {
+        return;
+    }
+    liberaNo(noAtual->esquerda);
+    liberaNo(noAtual->direita);
+    free(noAtual);
+}
 
 int main () {
 
@@ -103,28 +106,15 @@ int main () {
     printf("\n- Caso o programa não consiga adivinhar, você deve informar o nome do filme que você pensou, e uma pergunta que diferencie o filme que você pensou do filme que o programa sugeriu, e o programa irá adicionar essa informação na sua base de dados para poder acertar ele na próxima vez!\n");
     printf("\nVamos começar!\n");
 
-    rodarSistema(raiz);
+    char resposta;
+    do {
+        rodarSistema(raiz);
+        printf("\nDeseja jogar novamente? Responda com S ou N: ");
+        scanf(" %c%*[^\n]", &resposta);
+    }
+    while (resposta == 'S' || resposta == 's');
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-    // printf("Raiz: %s\n", raiz->nome);
-    // printf("Filme 1: %s\n", raiz->esquerda->nome);
-    // printf("Filme 2: %s\n", raiz->direita->nome);
-
-
-
-
+    liberaNo(raiz);
 
     return 0;
 }
