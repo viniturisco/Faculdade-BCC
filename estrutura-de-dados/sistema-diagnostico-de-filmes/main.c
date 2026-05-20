@@ -27,7 +27,7 @@ no* alocaRaiz(no *filme1, no *filme2) {
 }
 
 void corrigirArvore(no* noAtual) {
-    printf("Qual filme você pensou? ");
+    printf("\nPoxa, errei :(\nQual filme você pensou? ");
     char nomeFilme[255];
     scanf(" %[^\n]", nomeFilme);
     printf("Digite uma pergunta que diferencie %s de %s: ", nomeFilme, noAtual->nome);
@@ -46,7 +46,7 @@ void corrigirArvore(no* noAtual) {
 }
 
 void perguntaFinal (no* noAtual) {
-    (printf("\nO filme que você pensou é %s?\n", noAtual->nome));
+    printf("\nO filme que você pensou é %s?\n", noAtual->nome);
     printf("Responda com S ou N: ");
     char resposta;
     scanf(" %c%*[^\n]", &resposta);
@@ -85,12 +85,20 @@ void rodarSistema(no* noAtual) {
 }
 
 void liberaNo(no* noAtual) {
-    if (noAtual == NULL) {
-        return;
+    if (noAtual != NULL) {
+        liberaNo(noAtual->esquerda);
+        liberaNo(noAtual->direita);
+        free(noAtual);
     }
-    liberaNo(noAtual->esquerda);
-    liberaNo(noAtual->direita);
-    free(noAtual);
+}
+
+void exibirPreOrdem(no* noAtual, int n) {
+    if (noAtual!= NULL) {
+        for(int i = 0; i < n; i++) printf("  "); 
+        printf("-%s\n", noAtual->nome);
+        exibirPreOrdem(noAtual->esquerda, n + 1);
+        exibirPreOrdem(noAtual->direita, n + 1);
+    }
 }
 
 int main () {
@@ -114,7 +122,11 @@ int main () {
     }
     while (resposta == 'S' || resposta == 's');
 
+    printf("\nExibição da árvore completa em Pré-Ordem:\n\n");
+    exibirPreOrdem(raiz, 0);
+
     liberaNo(raiz);
+    
 
     return 0;
 }
