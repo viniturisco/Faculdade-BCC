@@ -39,14 +39,14 @@ Para testar o projeto e ensinar novos filmes ao sistema, basta clonar este repos
 1. Clone o repositório e acesse o diretório do projeto.
 2. Compile o código utilizando o GCC:
 ```bash
-gcc arvore_filmes.c -o arvore_filmes
+gcc main.c -o main
 
 ```
 
 
 3. Execute o programa gerado:
 ```bash
-./arvore_filmes
+./main
 
 ```
 

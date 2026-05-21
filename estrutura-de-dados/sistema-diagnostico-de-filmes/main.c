@@ -94,7 +94,7 @@ void liberaNo(no* noAtual) {
 
 void exibirPreOrdem(no* noAtual, int n) {
     if (noAtual!= NULL) {
-        for(int i = 0; i < n; i++) printf("  "); 
+        for(int i = 0; i < n; i++) printf("  ");
         printf("-%s\n", noAtual->nome);
         exibirPreOrdem(noAtual->esquerda, n + 1);
         exibirPreOrdem(noAtual->direita, n + 1);
@@ -124,11 +124,7 @@ int main () {
 
     printf("\nExibição da árvore completa em Pré-Ordem:\n\n");
     exibirPreOrdem(raiz, 0);
-
     liberaNo(raiz);
-    
 
     return 0;
 }
-
-
